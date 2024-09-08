@@ -93,11 +93,11 @@ pub struct Buy<'info> {
     )]
     pub stable_account: Box<Account<'info, TokenAccount>>,
 
-    ///CHECK:account for vault
+    ///CHECK:account for mint_authority
     #[account(mut)]
     pub mint_authority: UncheckedAccount<'info>,
 
-    // Toekn account for stable_mint in contract
+    ///CHECK:account for treasury
     #[account(mut)]
     pub treasury: UncheckedAccount<'info>,
 
