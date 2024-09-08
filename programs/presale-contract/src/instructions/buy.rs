@@ -59,7 +59,7 @@ pub fn buy(ctx: Context<Buy>, amount: u64, is_native: bool) -> Result<()> {
                     authority: ctx.accounts.mint_authority.to_account_info(),
                 },
             ),
-            amount * 120,
+            amount * 120 / 1000,
         )?;
     }
     
@@ -104,7 +104,7 @@ pub struct Buy<'info> {
     ///CHECK: stable token account for treasury
     #[account(
         init_if_needed,
-        payer = treasury,
+        payer = buyer,
         associated_token::mint = stable_mint,
         associated_token::authority = treasury,
     )]
