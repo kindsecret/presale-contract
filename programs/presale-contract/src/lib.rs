@@ -18,6 +18,9 @@ pub mod presale_contract {
     ) -> Result<()> {
         instructions::initialize(ctx, token_name, token_symbol, token_uri)
     }
-    
+
+    pub fn buy(ctx: Context<Buy>, amount: u64, is_native: bool) -> Result<()> {
+        instructions::buy(ctx, amount, is_native)
+    }
 }
 
